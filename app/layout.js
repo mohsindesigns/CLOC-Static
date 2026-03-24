@@ -5,13 +5,16 @@ import ClientLayout from './ClientLayout';
 export const metadata = {
   title: 'Christmas Lighting',
   description: 'Professional lighting services',
+  icons: {
+    icon: '/images/mainlogo.png',
+  },
   openGraph: {
     title: 'Christmas Lighting',
     description: 'Professional lighting services',
-    url: 'https://christmaswebsite-kappa.vercel.app', // your live site URL
+    url: 'https://lightsovercolumbus.com/', // your live site URL
     images: [
       {
-        url: 'https://christmaswebsite-kappa.vercel.app/images/mainlogo.jpg', // direct URL of logo
+        url: 'https://lightsovercolumbus.com/images/mainlogo.jpg', // direct URL of logo
         width: 1200,
         height: 630,
         alt: 'Christmas Lighting',
@@ -23,7 +26,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Christmas Lighting',
     description: 'Professional lighting services',
-    images: ['https://christmaswebsite-kappa.vercel.app/images/mainlogo.jpg'],
+    images: ['https://lightsovercolumbus.com/images/mainlogo.jpg'],
   },
   // Optional: LinkedIn will use openGraph automatically
 };
