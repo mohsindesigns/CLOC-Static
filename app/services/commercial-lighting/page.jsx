@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -274,9 +275,14 @@ const CommercialLightingPage = () => {
         { icon: <FaShieldAlt className="w-6 h-6" />, title: "Warranty Included", description: "Full warranty on all lights and installation throughout the season" }
     ];
     return (
-        <main className="overflow-x-hidden w-full bg-white">
-            {/* Hero Section */}
-            <section ref={heroRef} className="relative min-h-[80vh] flex items-center w-full overflow-hidden">
+        <>
+            <Head>
+                <title>Christmas Lighting Over Columbus | Commercial Services</title>
+                <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+            </Head>
+            <main className="overflow-x-hidden w-full bg-white">
+                {/* Hero Section */}
+                <section ref={heroRef} className="relative min-h-[80vh] flex items-center w-full overflow-hidden">
                 <div className="absolute inset-0">
                     <div className="relative w-full h-full transition-transform duration-200 ease-out" style={{ transform: `translate(${mousePosition.x * 5}px, ${mousePosition.y * 5}px) scale(1.05)` }}>
                         <Image src="/images/hero-background2.jpg" alt="Commercial Christmas Lighting" fill className="object-cover" priority />
@@ -511,6 +517,7 @@ const CommercialLightingPage = () => {
                 .animation-delay-2000 { animation-delay:2000ms }
             `}</style>
         </main>
+        </>
     );
 };
 

@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import CallToAction from '../components/CallToAction';
@@ -536,13 +537,18 @@ const ServicesPage = () => {
   const placeholderImage = '/images/placeholder-service.jpg';
 
   return (
-    <main className="overflow-x-hidden w-full">
-      {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[90vh] flex items-center w-full overflow-hidden"
-      >
-        {/* Background Image with Parallax */}
+    <>
+      <Head>
+        <title>Christmas Lighting Over Columbus | Services</title>
+        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+      </Head>
+      <main className="overflow-x-hidden w-full">
+        {/* Hero Section */}
+        <section
+          ref={heroRef}
+          className="relative min-h-[90vh] flex items-center w-full overflow-hidden"
+        >
+          {/* Background Image with Parallax */}
         <div className="absolute inset-0">
           <div
             className="relative w-full h-full transition-transform duration-200 ease-out"
@@ -888,6 +894,7 @@ const ServicesPage = () => {
         }
       `}</style>
     </main>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -106,7 +107,12 @@ const PermanentLightingPage = () => {
     ];
 
     return (
-        <main className="overflow-x-hidden w-full bg-white">
+        <>
+            <Head>
+                <title>Christmas Lighting Over Columbus | Permanent Services</title>
+                <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+            </Head>
+            <main className="overflow-x-hidden w-full bg-white">
             {/* Hero Section */}
             <section ref={heroRef} className="relative min-h-[80vh] flex items-center w-full overflow-hidden">
                 <div className="absolute inset-0">
@@ -352,6 +358,7 @@ const PermanentLightingPage = () => {
                 .animation-delay-2000 { animation-delay:2000ms }
             `}</style>
         </main>
+        </>
     );
 };
 

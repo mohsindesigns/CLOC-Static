@@ -1,4 +1,5 @@
 ﻿"use client";
+import Head from "next/head";
 import Hero from "../components/Hero";
 import ChristmasLightingSection from "../components/servicesection";
 import ChristmasLightingServices from "../components/ChristmasLightingServices";
@@ -19,6 +20,10 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Christmas Lighting Over Columbus</title>
+        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+      </Head>
       <Hero />
       <ChristmasLightingSection />
       <ChristmasLightingServices />

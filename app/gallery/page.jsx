@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import CallToAction from '../components/CallToAction';
@@ -500,13 +501,18 @@ const Gallery = () => {
   };
 
   return (
-    <main className="overflow-x-hidden w-full bg-white">
-      {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[90vh] flex items-center w-full overflow-hidden"
-      >
-        {/* Background Image */}
+    <>
+      <Head>
+        <title>Christmas Lighting Over Columbus | Gallery</title>
+        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+      </Head>
+      <main className="overflow-x-hidden w-full bg-white">
+        {/* Hero Section */}
+        <section
+          ref={heroRef}
+          className="relative min-h-[90vh] flex items-center w-full overflow-hidden"
+        >
+          {/* Background Image */}
         <div className="absolute inset-0">
           <div
             className="relative w-full h-full transition-transform duration-[50ms] ease-out will-change-transform"
@@ -1095,6 +1101,7 @@ const Gallery = () => {
         }
       `}</style>
     </main>
+    </>
   );
 };
 

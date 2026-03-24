@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import FAQ from '../components/FAQSection';
@@ -577,12 +578,17 @@ const AboutUs = () => {
   };
 
   return (
-    <main ref={mainRef} className="overflow-x-hidden w-full">
-      {/* Modal Component */}
-      <ConsultationModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+    <>
+      <Head>
+        <title>Christmas Lighting Over Columbus | About Us</title>
+        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+      </Head>
+      <main ref={mainRef} className="overflow-x-hidden w-full">
+        {/* Modal Component */}
+        <ConsultationModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
 
       {/* Hero Section */}
       <section
@@ -934,6 +940,7 @@ const AboutUs = () => {
         }
       `}</style>
     </main>
+    </>
   );
 };
 

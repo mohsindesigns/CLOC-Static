@@ -1,4 +1,5 @@
 "use client";
+import Head from 'next/head';
 import React, { useEffect } from "react";
 import Link from "next/link";
 import {
@@ -29,13 +30,18 @@ const TermsAndConditions = () => {
     const lastUpdated = "March 2026";
 
     return (
-        <main className="min-h-screen bg-gray-50">
-            {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-emerald-900 to-emerald-800 py-16 overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[length:20px_20px]"></div>
-                </div>
+        <>
+            <Head>
+                <title>Christmas Lighting Over Columbus | Terms and Conditions</title>
+                <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+            </Head>
+            <main className="min-h-screen bg-gray-50">
+                {/* Hero Section */}
+                <section className="relative bg-gradient-to-r from-emerald-900 to-emerald-800 py-16 overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[length:20px_20px]"></div>
+                    </div>
 
                 {/* Decorative Orbs */}
                 <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -408,7 +414,8 @@ const TermsAndConditions = () => {
           animation-delay: 2s;
         }
       `}</style>
-        </main>
+            </main>
+        </>
     );
 };
 

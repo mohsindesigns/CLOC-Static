@@ -1,5 +1,6 @@
 // components/ModernQuoteForm.jsx
 "use client";
+import Head from 'next/head';
 import React, { useState, useCallback, memo } from "react";
 import {
   FaUser,
@@ -89,10 +90,15 @@ const ModernQuoteForm = () => {
   const hasFiles = fileCount > 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-8 px-4 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Simple Header */}
-        <div className="text-center mb-8 lg:mb-12">
+    <>
+      <Head>
+        <title>Christmas Lighting Over Columbus | Contact</title>
+        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+      </Head>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-8 px-4 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Simple Header */}
+          <div className="text-center mb-8 lg:mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-600/10 via-amber-500/10 to-red-600/10 rounded-full border border-amber-500/30 mb-4">
             <GiSparkles className="text-sm text-amber-500" />
             <span className="text-sm font-medium text-gray-800 uppercase">Get A Fast Quote</span>
@@ -297,6 +303,7 @@ const ModernQuoteForm = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

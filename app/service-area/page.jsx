@@ -1,4 +1,5 @@
 "use client";
+import Head from 'next/head';
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import CallToAction from "../components/CallToAction";
@@ -371,12 +372,17 @@ const ServiceArea = () => {
   if (!mounted) return null;
 
   return (
-    <main className="overflow-x-hidden w-full bg-white">
-      {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[90vh] flex items-center w-full overflow-hidden"
-      >
+    <>
+      <Head>
+        <title>Christmas Lighting Over Columbus | Service Area</title>
+        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
+      </Head>
+      <main className="overflow-x-hidden w-full bg-white">
+        {/* Hero Section */}
+        <section
+          ref={heroRef}
+          className="relative min-h-[90vh] flex items-center w-full overflow-hidden"
+        >
         {/* Background Image */}
         <div className="absolute inset-0">
           <div
@@ -1041,6 +1047,7 @@ const ServiceArea = () => {
         }
       `}</style>
     </main>
+    </>
   );
 };
 
