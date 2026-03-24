@@ -43,8 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23000' width='100' height='100'/><circle cx='50' cy='30' r='8' fill='%23FFD700'/><circle cx='30' cy='60' r='6' fill='%23FFD700'/><circle cx='70' cy='60' r='6' fill='%23FFD700'/><circle cx='50' cy='80' r='5' fill='%23FFD700'/></svg>" />
       </head>
       <body className={`${montserrat.variable} font-sans`}>
         <ClientLayout>{children}</ClientLayout>
