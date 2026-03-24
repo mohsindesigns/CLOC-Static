@@ -1,5 +1,4 @@
 ﻿"use client";
-import Head from "next/head";
 import Hero from "../components/Hero";
 import ChristmasLightingSection from "../components/servicesection";
 import ChristmasLightingServices from "../components/ChristmasLightingServices";
@@ -15,15 +14,18 @@ const Home = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Set page title and meta description
+    document.title = 'Christmas Lighting Over Columbus';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Serving Columbus With Stress-Free Holiday Lighting');
+    }
+    
     setIsClient(true);
   }, []);
 
   return (
     <>
-      <Head>
-        <title>Christmas Lighting Over Columbus</title>
-        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
-      </Head>
       <Hero />
       <ChristmasLightingSection />
       <ChristmasLightingServices />

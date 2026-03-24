@@ -1,5 +1,4 @@
 'use client'
-import Head from 'next/head';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import CallToAction from '../components/CallToAction';
@@ -379,6 +378,18 @@ const Gallery = () => {
 
   // Smooth parallax effect
   useEffect(() => {
+    // Set page title and meta description
+    document.title = 'Christmas Lighting Over Columbus | Gallery';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Serving Columbus With Stress-Free Holiday Lighting');
+    }
+    
+    setMounted(true);
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     let rafId;
     let currentX = 0;
     let currentY = 0;
@@ -502,10 +513,6 @@ const Gallery = () => {
 
   return (
     <>
-      <Head>
-        <title>Christmas Lighting Over Columbus | Gallery</title>
-        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
-      </Head>
       <main className="overflow-x-hidden w-full bg-white">
         {/* Hero Section */}
         <section

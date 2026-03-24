@@ -1,6 +1,5 @@
 // components/ModernQuoteForm.jsx
 "use client";
-import Head from 'next/head';
 import React, { useState, useCallback, memo } from "react";
 import {
   FaUser,
@@ -89,12 +88,17 @@ const ModernQuoteForm = () => {
   const fileCount = files.length;
   const hasFiles = fileCount > 0;
 
+  // Set page title
+  React.useEffect(() => {
+    document.title = 'Christmas Lighting Over Columbus | Contact';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Serving Columbus With Stress-Free Holiday Lighting');
+    }
+  }, []);
+
   return (
     <>
-      <Head>
-        <title>Christmas Lighting Over Columbus | Contact</title>
-        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
-      </Head>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-8 px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Simple Header */}

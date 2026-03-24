@@ -1,5 +1,4 @@
 'use client'
-import Head from 'next/head';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import FAQ from '../components/FAQSection';
@@ -60,6 +59,13 @@ const AboutUs = () => {
   const rightTreeRef = useRef(null);
 
   useEffect(() => {
+    // Set page title and meta description
+    document.title = 'Christmas Lighting Over Columbus | About Us';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Serving Columbus With Stress-Free Holiday Lighting');
+    }
+    
     window.scrollTo(0, 0);
     setIsVisible(true);
     setMounted(true);
@@ -579,10 +585,6 @@ const AboutUs = () => {
 
   return (
     <>
-      <Head>
-        <title>Christmas Lighting Over Columbus | About Us</title>
-        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
-      </Head>
       <main ref={mainRef} className="overflow-x-hidden w-full">
         {/* Modal Component */}
         <ConsultationModal

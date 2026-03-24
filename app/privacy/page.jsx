@@ -1,5 +1,4 @@
 "use client";
-import Head from 'next/head';
 import React, { useEffect } from "react";
 import Link from "next/link";
 import {
@@ -26,6 +25,13 @@ import { GiFruitTree } from "react-icons/gi";
 const PrivacyPolicy = () => {
     // Scroll to top on page load
     useEffect(() => {
+        // Set page title and meta description
+        document.title = 'Christmas Lighting Over Columbus | Privacy Policy';
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+          metaDescription.setAttribute('content', 'Serving Columbus With Stress-Free Holiday Lighting');
+        }
+        
         window.scrollTo(0, 0);
     }, []);
 
@@ -34,10 +40,6 @@ const PrivacyPolicy = () => {
 
     return (
         <>
-            <Head>
-                <title>Christmas Lighting Over Columbus | Privacy Policy</title>
-                <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
-            </Head>
             <main className="min-h-screen bg-gray-50">
                 {/* Hero Section */}
                 <section className="relative bg-gradient-to-r from-emerald-900 to-emerald-800 py-16 overflow-hidden">
