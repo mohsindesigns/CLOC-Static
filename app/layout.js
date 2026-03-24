@@ -6,9 +6,9 @@ export const metadata = {
   title: 'Christmas Lighting',
   description: 'Professional lighting services',
   icons: {
-    icon: '/images/mainlogo.png',
-    shortcut: '/images/mainlogo.png',
-    apple: '/images/mainlogo.png',
+    icon: '/images/mainlogo.jpg',
+    shortcut: '/images/mainlogo.jpg',
+    apple: '/images/mainlogo.jpg',
   },
   openGraph: {
     title: 'Christmas Lighting',
