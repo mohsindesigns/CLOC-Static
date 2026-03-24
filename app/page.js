@@ -1,16 +1,10 @@
-'use client';
-
-import Head from 'next/head';
 import Home from './components/Home';
 
+export const metadata = {
+  title: 'Christmas Lighting Over Columbus',
+  description: 'Serving Columbus With Stress-Free Holiday Lighting',
+};
+
 export default function HomePage() {
-  return (
-    <>
-      <Head>
-        <title>Christmas Lighting Over Columbus</title>
-        <meta name="description" content="Serving Columbus With Stress-Free Holiday Lighting" />
-      </Head>
-      <Home />
-    </>
-  );
+  return <Home />;
 }
