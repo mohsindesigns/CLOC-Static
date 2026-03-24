@@ -156,27 +156,39 @@ const ConsultationModal = ({ isOpen, onClose }) => {
         setIsSubmitting(true);
         setError('');
 
-        // Simulate API call
         try {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            setIsSubmitted(true);
-            setTimeout(() => {
-                setIsSubmitted(false);
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    address: '',
-                    serviceType: 'seasonal',
-                    preferredDate: '',
-                    preferredTime: '',
-                    message: '',
-                    hearAbout: ''
-                });
-                onClose();
-            }, 3000);
+            const response = await fetch('/api/schedule-consultation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setIsSubmitted(true);
+                setTimeout(() => {
+                    setIsSubmitted(false);
+                    setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        address: '',
+                        serviceType: 'seasonal',
+                        preferredDate: '',
+                        preferredTime: '',
+                        message: '',
+                        hearAbout: ''
+                    });
+                    onClose();
+                }, 3000);
+            } else {
+                const data = await response.json();
+                setError(data.message || 'Something went wrong. Please try again.');
+            }
         } catch (error) {
-            setError('Something went wrong. Please try again.');
+            console.error('Error submitting form:', error);
+            setError('Network error. Please check your connection and try again.');
         } finally {
             setIsSubmitting(false);
         }

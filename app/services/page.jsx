@@ -136,25 +136,35 @@ const ConsultationModal = ({ isOpen, onClose }) => {
     setError('');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', formData);
+      const response = await fetch('/api/schedule-consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          address: '',
-          serviceType: 'seasonal',
-          preferredDate: '',
-          preferredTime: '',
-          message: '',
-          hearAbout: ''
-        });
-        onClose();
-      }, 3000);
+      if (response.ok) {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            address: '',
+            serviceType: 'seasonal',
+            preferredDate: '',
+            preferredTime: '',
+            message: '',
+            hearAbout: ''
+          });
+          onClose();
+        }, 3000);
+      } else {
+        const data = await response.json();
+        setError(data.message || 'Something went wrong. Please try again.');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       setError('Network error. Please check your connection and try again.');

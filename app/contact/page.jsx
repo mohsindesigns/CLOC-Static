@@ -74,15 +74,29 @@ const ModernQuoteForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Immediate success for demo - replace with actual API call
-    setTimeout(() => {
-      console.log("Form submitted:", formData, files);
-      setIsSubmitted(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData(INITIAL_FORM_STATE);
+        setFiles([]);
+        setTimeout(() => setIsSubmitted(false), 3000);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Network error. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      setFormData(INITIAL_FORM_STATE);
-      setFiles([]);
-      setTimeout(() => setIsSubmitted(false), 3000);
-    }, 300);
+    }
   };
 
   const fileCount = files.length;
@@ -415,7 +429,7 @@ const ContactInfo = memo(() => (
           <div className="text-base font-bold text-white">(614) 301-7100</div>
         </div>
       </a>
-      <a href="mailto:info@christmaslightsovercolumbus.com" className="flex items-center gap-3 hover:opacity-90">
+      <a href="mailto:Info@lightsovercolumbus.com" className="flex items-center gap-3 hover:opacity-90">
         <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
           <FaEnvelope className="text-sm text-white" />
         </div>

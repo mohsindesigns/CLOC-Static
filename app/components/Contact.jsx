@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import CTASection from '../components/CTASection'
 
@@ -10,6 +10,7 @@ const Contact = () => {
     service: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -18,17 +19,37 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In a real application, this would connect to a backend
-    alert('Thank you for your inquiry! We will contact you within 24 hours.')
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: '',
-    })
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        alert('Thank you for your inquiry! We will contact you within 24 hours.')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: '',
+        })
+      } else {
+        alert('Something went wrong. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Network error. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -57,7 +78,7 @@ const Contact = () => {
               <h2 className="text-3xl font-display font-bold mb-8 text-white">
                 Send Us a Message
               </h2>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-warm-white/80 mb-2">Full Name *</label>
@@ -71,7 +92,7 @@ const Contact = () => {
                     placeholder="Your name"
                   />
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-warm-white/80 mb-2">Email Address *</label>
@@ -85,7 +106,7 @@ const Contact = () => {
                       placeholder="your@email.com"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-warm-white/80 mb-2">Phone Number</label>
                     <input
@@ -98,7 +119,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-warm-white/80 mb-2">Service Interest</label>
                   <select
@@ -115,7 +136,7 @@ const Contact = () => {
                     <option value="maintenance">Maintenance & Repair</option>
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block text-warm-white/80 mb-2">Message *</label>
                   <textarea
@@ -128,12 +149,13 @@ const Contact = () => {
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-holiday-red to-holiday-gold text-white font-semibold rounded-full hover:shadow-lg hover:shadow-holiday-red/30 transition-all duration-300 text-lg"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-gradient-to-r from-holiday-red to-holiday-gold text-white font-semibold rounded-full hover:shadow-lg hover:shadow-holiday-red/30 transition-all duration-300 text-lg disabled:opacity-70 cursor-pointer disabled:cursor-not-allowed"
                 >
-                  Get Free Quote â†’
+                  {isSubmitting ? 'Sending Request...' : 'Get Free Quote â†’'}
                 </button>
               </form>
             </div>
@@ -143,7 +165,7 @@ const Contact = () => {
               <h2 className="text-3xl font-display font-bold mb-8 text-white">
                 Get in Touch
               </h2>
-              
+
               <div className="space-y-8">
                 {/* Contact Cards */}
                 {[
@@ -216,7 +238,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-white">Emergency Service</h4>
                     <p className="text-warm-white/80 text-sm">
-                      Lighting issues after hours? Call our emergency line: 
+                      Lighting issues after hours? Call our emergency line:
                       <span className="text-holiday-gold font-semibold ml-1">(555) 911-LIGHTS</span>
                     </p>
                   </div>

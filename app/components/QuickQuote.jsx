@@ -65,7 +65,7 @@ ${formData.message}
         try {
             // Try FormSubmit first
             try {
-                const response = await fetch('https://formsubmit.co/ajax/ammansoor007@gmail.com', {
+                const response = await fetch('https://formsubmit.co/ajax/Info@lightsovercolumbus.com', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -92,13 +92,13 @@ ${formData.message}
             }
 
             // Fallback to mailto
-            const mailtoLink = `mailto:ammansoor007@gmail.com?subject=🎄 Quick Quote - ${formData.name}&body=${encodeURIComponent(emailContent)}`;
+            const mailtoLink = `mailto:Info@lightsovercolumbus.com?subject=🎄 Quick Quote - ${formData.name}&body=${encodeURIComponent(emailContent)}`;
             window.location.href = mailtoLink;
             showSuccess();
 
         } catch (error) {
             console.error('Submission error:', error);
-            alert('Please email us directly at ammansoor007@gmail.com');
+            alert('Please email us directly at Info@lightsovercolumbus.com');
         } finally {
             setIsSubmitting(false);
         }

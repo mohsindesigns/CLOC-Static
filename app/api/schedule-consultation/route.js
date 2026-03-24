@@ -104,7 +104,7 @@ async function sendEmailsInBackground(data) {
     formattedDate, preferredTime, message, hearAbout
   } = data;
 
-  const businessEmail = process.env.GMAIL_USER;
+  const businessEmail = 'Info@lightsovercolumbus.com';
   const transporter = getTransporter();
 
   // Prepare email content

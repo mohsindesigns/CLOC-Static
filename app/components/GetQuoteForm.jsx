@@ -147,33 +147,46 @@ const ModernQuoteForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    console.log("Form submitted:", formData, files);
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-
-    // Reset form
-    setFormData({
-      fname: "",
-      lname: "",
-      email: "",
-      phone: "",
-      address: "",
-      city: "",
-      budget: "",
-      notes: "",
-      colorPref: "",
-      lightingAreas: {
-        house: false,
-        ground: false,
-        trees: false,
-        shrubs: false
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Reset form
+        setFormData({
+          fname: "",
+          lname: "",
+          email: "",
+          phone: "",
+          address: "",
+          city: "",
+          budget: "",
+          notes: "",
+          colorPref: "",
+          lightingAreas: {
+            house: false,
+            ground: false,
+            trees: false,
+            shrubs: false
+          }
+        });
+        setFiles([]);
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        alert('There was an error submitting your request. Please try again.');
       }
-    });
-    setFiles([]);
-
-    setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert('There was a network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -556,7 +569,7 @@ const ModernQuoteForm = () => {
                   </div>
                 </a>
                 <a
-                  href="mailto:info@christmaslightsovercolumbus.com"
+                  href="mailto:Info@lightsovercolumbus.com"
                   className="flex items-center gap-3 hover:opacity-90 transition-opacity group"
                 >
                   <div className="w-8 h-8 xs:w-10 xs:h-10 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
