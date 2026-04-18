@@ -611,7 +611,7 @@ const HowWeWorkSection = () => {
             {/* Main Title */}
             <h2 className="text-center font-montserrat text-4xl md:text-5xl font-extrabold mb-6">
               <span className="bg-gradient-to-r from-red-600 via-amber-500 to-emerald-600 bg-clip-text text-transparent">
-                Working With Us Coultn't Be Easier
+           Working With Us Couldn't Be Easier
               </span>
             </h2>
 
