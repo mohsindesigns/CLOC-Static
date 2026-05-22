@@ -1,0 +1,21 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/api/cms/hero/route": "/api/cms/hero",
+  "/api/contact/route": "/api/contact",
+  "/api/schedule-consultation/route": "/api/schedule-consultation",
+  "/api/website-data/route": "/api/website-data",
+  "/contact/page": "/contact",
+  "/gallery/page": "/gallery",
+  "/icon.jpg/route": "/icon.jpg",
+  "/page": "/",
+  "/privacy/page": "/privacy",
+  "/service-area/page": "/service-area",
+  "/service/page": "/service",
+  "/services/commercial-lighting/page": "/services/commercial-lighting",
+  "/services/page": "/services",
+  "/services/permanent-lighting/page": "/services/permanent-lighting",
+  "/services/residential-lighting/page": "/services/residential-lighting",
+  "/terms/page": "/terms"
+}
