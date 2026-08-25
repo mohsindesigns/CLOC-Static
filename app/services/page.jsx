@@ -452,7 +452,7 @@ const ServicesPage = () => {
   // Load data and initial setup
   useEffect(() => {
     // Set page title and meta description
-    document.title = 'Christmas Lighting Over Columbus | Services';
+    document.title = 'Christmas Light Installation Services | Columbus, Ohio';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Serving Columbus With Stress-Free Holiday Lighting');

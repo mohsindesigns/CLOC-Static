@@ -370,33 +370,7 @@ const ModernQuoteForm = () => {
                 </div>
 
                 {/* Budget Select */}
-                <div>
-                  <label className="block text-gray-700 text-sm font-medium mb-1.5">
-                    Budget Range *
-                  </label>
-                  <div className="relative group">
-                    <FaDollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-amber-500 transition-colors text-sm z-10" />
-                    <select
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-10 pr-8 py-2.5 xs:py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 outline-none transition text-sm xs:text-base appearance-none text-gray-900"
-                    >
-                      <option value="" className="text-gray-900">Select your budget...</option>
-                      {budgetOptions.map((option, index) => (
-                        <option key={index} value={option} className="text-gray-900">
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+
 
                 {/* Lighting Areas */}
                 <div>

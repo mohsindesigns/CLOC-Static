@@ -3,7 +3,7 @@ import './globals.css';
 import ClientLayout from './ClientLayout';
 
 export const metadata = {
-  title: 'Christmas Lighting',
+  title: 'Christmas Light Installation Columbus, Ohio | Christmas Lights Over Columbus',
   description: 'Professional lighting services',
   icons: {
     icon: '/images/mainlogo.jpg',
@@ -11,7 +11,7 @@ export const metadata = {
     apple: '/images/mainlogo.jpg',
   },
   openGraph: {
-    title: 'Christmas Lighting',
+    title: 'Christmas Light Installation Columbus, Ohio | Christmas Lights Over Columbus',
     description: 'Professional lighting services',
     url: 'https://lightsovercolumbus.com/', // your live site URL
     images: [
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Christmas Lighting',
+    title: 'Christmas Light Installation Columbus, Ohio | Christmas Lights Over Columbus',
     description: 'Professional lighting services',
     images: ['https://lightsovercolumbus.com/images/mainlogo.jpg'],
   },

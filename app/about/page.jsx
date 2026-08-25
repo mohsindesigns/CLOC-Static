@@ -60,7 +60,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     // Set page title and meta description
-    document.title = 'Christmas Lighting Over Columbus | About Us';
+    document.title = 'About Christmas Lights Over Columbus | Columbus, Ohio';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Serving Columbus With Stress-Free Holiday Lighting');

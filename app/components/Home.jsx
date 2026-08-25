@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Hero from "../components/Hero";
 import ChristmasLightingSection from "../components/servicesection";
 import ChristmasLightingServices from "../components/ChristmasLightingServices";
@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     // Set page title and meta description
-    document.title = 'Christmas Lighting Over Columbus';
+    document.title = 'Christmas Light Installation Columbus, Ohio | Christmas Lights Over Columbus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Serving Columbus With Stress-Free Holiday Lighting');

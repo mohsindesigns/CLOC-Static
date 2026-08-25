@@ -237,10 +237,7 @@
     },
     "description": "Professional Christmas lighting installations that transform ordinary homes into magical holiday destinations",
     "cta": "View Our Portfolio",
-    "images": [
-      
-     
-    ]
+    "images": []
   },
   "howWeWork": {
     "badge": "Simple Process",
@@ -317,7 +314,7 @@
       },
       {
         "question": "What kind of lights do you install?",
-        "answer": "We install two types of lighting: Seasonal Lighting – commercial-grade C9 LED bulbs that are 3x brighter than anything you'll find at a big-box store, with every display custom-fit to your home. Permanent Lighting – Invisilights permanent lighting systems.",
+        "answer": "We install two types of lighting: Seasonal Lighting – commercial-grade C9 LED bulbs that are 3x brighter than anything you'll find at a big-box store, with every display custom-fit to your home. ",
         "icon": "FaLightbulb",
         "category": "Products",
         "features": [
@@ -325,6 +322,20 @@
           "3x Brighter",
           "Custom-Fit Displays",
           "Invisilights Permanent"
+        ]
+      },
+      {
+        "question": "How much does professional Christmas light installation cost?",
+        "answer": "Our seasonal lighting packages start at $899. Every display is custom-designed, so final pricing depends on your home, roofline and selected lighting elements. We’ll provide multiple design and pricing options so you can choose what works best for your home and budget. Every package includes commercial-grade lights, professional installation, maintenance throughout the season, takedown and storage.",
+        "icon": "FaDollarSign",
+        "category": "Pricing",
+        "features": [
+          "Packages Start at $899",
+          "Custom-Designed Displays",
+          "Multiple Design Options",
+          "Professional Installation",
+          "Seasonal Maintenance",
+          "Takedown & Storage"
         ]
       },
       {
